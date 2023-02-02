@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="properties.php">Properties</a>
+      <a href="bookings.php">Bookings</a>
+      <a href="profile.php">My Profile</a>
+      <a href="register.php">Register</a>
+      <a href="login.php">Login</a>
+    </nav>
+  </header>
+  <section>
+    <!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
+    <form action="">
+      <div class="input__box">
+        <label for="username">Username:</label>
+        <input type="text" name="username" maxlength="50" id="username">
+      </div>
+      <div class="input__box">
+        <label for="pword">Password:</label>
+        <input type="password" name="pword" maxlength="20" id="pword">
+      </div>
+      <input type="submit" value="Login" name="submit">
+
+    </form>
+  </section>
+</body>
+
+</html>
