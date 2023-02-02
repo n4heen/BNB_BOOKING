@@ -1,27 +1,57 @@
 /* 20408031 Naheen Habib Tuesday 12pm  */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'roboto', sans-serif;
+    background-color: #ffff;
 }
 
-
+/*  HOME PAGE*/
 nav {
     margin-top: 16px;
     display: flex;
     justify-content: space-evenly;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     text-decoration: underline;
 }
 
-span{
-    color: red;
+section {
+    text-align: center;
+    margin-top: 15%;
 }
+
+h1 {
+    font-size: 100px;
+}
+
+p {
+    font-size: 50px;
+}
+
+.orange {
+    color: #ff8c00;
+}
+
+button {
+    border: none;
+    margin-top: 8px;
+    padding: 8px 24px 8px 24px;
+    background-color: #ff8c00;
+    border-radius: 4px;
+}
+
+.orange__link {
+    background-color: #ff8c00;
+    color: white;
+}
+
+/*PROPERTIES PAGE*/
