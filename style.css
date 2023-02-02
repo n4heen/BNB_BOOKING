@@ -41,7 +41,7 @@ p {
     color: #ff8c00;
 }
 
-button {
+.button {
     border: none;
     margin-top: 8px;
     padding: 8px 24px 8px 24px;
@@ -57,3 +57,11 @@ button {
 /*PROPERTIES PAGE*/
 
 /*LOGIN PAGE*/
+
+label{
+    display: block;
+}
+
+input,label{
+    margin-bottom: 16px;
+}
