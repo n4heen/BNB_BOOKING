@@ -1,3 +1,4 @@
+<!-- 20408031 Naheen Habib Tuesday 12pm -->
 <?php
 /**
  * Allows one to view all tables and their data in a database
