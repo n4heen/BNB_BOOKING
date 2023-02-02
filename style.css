@@ -58,10 +58,28 @@ p {
 
 /*LOGIN PAGE*/
 
-label{
-    display: block;
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
 
-input,label{
+label {
+    display: block;
+    font-weight: bold;
+}
+
+
+input {
     margin-bottom: 16px;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    /* .green-magic {
+    background-color:#00cc00;
+    } */
 }
