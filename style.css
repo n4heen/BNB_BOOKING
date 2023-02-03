@@ -30,7 +30,8 @@ section {
 }
 
 h1 {
-    font-size: 100px;
+    font-size: 72px;
+    margin-bottom: 8px;
 }
 
 p {
@@ -63,18 +64,27 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* background-color: #ff8c00;
+    border: 1px #ff8c00 solid ;
+    padding: 50px;
+    margin: 200px; */
 
 }
 
 label {
     display: block;
     font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 28px;
 }
 
 
 input {
     margin-bottom: 16px;
+    text-align: center;
+    color: white;
 }
+
 
 
 
