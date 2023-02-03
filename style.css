@@ -48,6 +48,8 @@ p {
     padding: 8px 24px 8px 24px;
     background-color: #ff8c00;
     border-radius: 4px;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .orange__link {
@@ -83,6 +85,9 @@ input {
     margin-bottom: 16px;
     text-align: center;
     color: white;
+    border: 1px #5f6368 solid;
+    border-radius: 4px;
+    padding: 8px 16px 8px 16px;
 }
 
 
