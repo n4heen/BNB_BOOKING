@@ -62,15 +62,18 @@ p {
 /*LOGIN PAGE*/
 
 form {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     /* background-color: #ff8c00;
     border: 1px #ff8c00 solid ;
     padding: 50px;
     margin: 200px; */
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 label {
@@ -94,8 +97,8 @@ input {
 
 .registration{
 display: flex;
-flex-direction: column;
-justify-content: space-around;
+
+
 }
 
 

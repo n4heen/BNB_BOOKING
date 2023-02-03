@@ -2,54 +2,56 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Register</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="properties.php">Properties</a>
-      <a href="bookings.php">Bookings</a>
-      <a href="profile.php">My Profile</a>
-      <a href="register.html">Register</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
-  <section class="registration" >
-    <!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="properties.php">Properties</a>
+            <a href="bookings.php">Bookings</a>
+            <a href="profile.php">My Profile</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+    <section>
         <h1 class="orange">Registration</h1>
-    <form action="">
-      <div class="input__box">
-        <label for="firstname">First Name</label>
-        <input type="text" name="firstname" maxlength="50" id="firstname" placeholder="First Name">
-      </div>
+        <!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
 
-      <div class="input__box">
-        <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" maxlength="50" id="lastname" placeholder="Last Name">
-      </div>
+        <form class="registration" action="">
 
-      <div class="input__box">
-        <label for="email">Email</label>
-        <input type="email" name="email" maxlength="50" id="email" placeholder="Last Name">
-      </div>
+            <div class="input__box">
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" maxlength="50" id="firstname" placeholder="First Name">
+            </div>
+
+            <div class="input__box">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" maxlength="50" id="lastname" placeholder="Last Name">
+            </div>
+
+            <div class="input__box">
+                <label for="email">Email</label>
+                <input type="email" name="email" maxlength="50" id="email" placeholder="Last Name">
+            </div>
 
 
-      <div class="input__box">
-        <label for="username">Username</label>
-        <input type="text" name="username" maxlength="50" id="username" placeholder="Username">
-      </div>
-      <div class="input__box">
-        <label for="pword">Password</label>
-        <input type="password" name="pword" maxlength="20" id="pword" placeholder="Password">
-      </div>
-      <input class="button" type="submit" value="Login" name="submit">
+            <div class="input__box">
+                <label for="username">Username</label>
+                <input type="text" name="username" maxlength="50" id="username" placeholder="Username">
+            </div>
+            <div class="input__box">
+                <label for="pword">Password</label>
+                <input type="password" name="pword" maxlength="20" id="pword" placeholder="Password">
+            </div>
+            <input class="button" type="submit" value="Login" name="submit">
 
-    </form>
-  </section>
+        </form>
+    </section>
 </body>
 
 </html>
