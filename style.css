@@ -97,7 +97,7 @@ input {
 
 .registration{
 display: flex;
-
+flex-direction: row;
 
 }
 

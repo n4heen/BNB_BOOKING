@@ -1,0 +1,57 @@
+<!-- 20408031 Naheen Habib Tuesday 12pm -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="properties.php">Properties</a>
+            <a href="bookings.php">Bookings</a>
+            <a href="profile.php">My Profile</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+  
+    <section class="checkout">
+        <!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
+        <h1 class="orange">Checkout</h1>
+        <form action="">
+          <div class="input__box">
+            <label for="creditName">Credit Card Name</label>
+            <input type="text" name="creditName" maxlength="50" id="creditName" placeholder="Credit Card Name">
+          </div>
+
+          <div class="input__box">
+            <label for="creditNum">Credit Card Number</label>
+            <input type="text" name="creditNum" maxlength="50" id="creditNum" placeholder="Credit Card Number">
+          </div>
+
+
+          <div class="input__box">
+            <label for="creditExpire">Expiry Date</label>
+            <input type="text" name="creditExpire" maxlength="50" id="creditExpire" placeholder="Expiry Date">
+          </div>
+
+
+          <div class="input__box">
+            <label for="creditCsv">CSV Number</label>
+            <input type="text" name="creditCsv" maxlength="50" id="creditCsv" placeholder="CSV Number">
+          </div>
+
+          <input class="button" type="submit" value="Login" name="submit">
+    
+        </form>
+      </section>
+
+</body>
+
+</html>
