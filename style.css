@@ -90,6 +90,13 @@ input {
     padding: 8px 16px 8px 16px;
 }
 
+/*REGISTER PAGE*/
+
+.registration{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+}
 
 
 
