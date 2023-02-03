@@ -63,14 +63,6 @@ p {
 /*LOGIN PAGE*/
 
 form {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
-    /* background-color: #ff8c00;
-    border: 1px #ff8c00 solid ;
-    padding: 50px;
-    margin: 200px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,7 +111,48 @@ input {
 }
 
 @media screen and (min-width: 768px) {
-    /* .green-magic {
-    background-color:#00cc00;
-    } */
+ /*  HOME PAGE*/
+ /* nav {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+    font-size: 100px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section {
+    text-align: center;
+    margin-top: 15%;
+}
+
+h1 {
+    font-size: 72px;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 50px;
+}
+
+.orange {
+    color: #ff8c00;
+}
+
+.button {
+    border: none;
+    margin-top: 8px;
+    padding: 8px 24px 8px 24px;
+    background-color: #ff8c00;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #ffff;
+}  */
 }
