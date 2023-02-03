@@ -50,6 +50,7 @@ p {
     border-radius: 4px;
     font-weight: bold;
     font-size: 16px;
+    color: #ffff;
 }
 
 .orange__link {
@@ -87,7 +88,6 @@ label {
 input {
     margin-bottom: 16px;
     text-align: center;
-    color: white;
     border: 1px #5f6368 solid;
     border-radius: 4px;
     padding: 8px 16px 8px 16px;
@@ -95,13 +95,28 @@ input {
 
 /*REGISTER PAGE*/
 
-.registration{
-display: flex;
-flex-direction: row;
-
+.registration__container {
+    display: flex;
+    margin-bottom: 16px;
 }
 
+.input__box--register {
+    display: flex;
+    flex-direction: column;
+    margin: 0 32px 0 32px;
+}
 
+/*CHECKOUT PAGE*/
+
+.checkout__container {
+    display: flex;
+    margin-bottom: 16px;
+}
+.input__box--checkout {
+    display: flex;
+    flex-direction: column;
+    margin: 0 32px 0 32px;
+}
 
 @media screen and (min-width: 768px) {
     /* .green-magic {

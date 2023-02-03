@@ -20,37 +20,38 @@
             <a href="login.html">Login</a>
         </nav>
     </header>
-  
+
     <section class="checkout">
         <!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
         <h1 class="orange">Checkout</h1>
         <form action="">
-          <div class="input__box">
-            <label for="creditName">Credit Card Name</label>
-            <input type="text" name="creditName" maxlength="50" id="creditName" placeholder="Credit Card Name">
-          </div>
+            <div class="checkout__container">
+                <div class="input__box--checkout">
+                    <label for="creditName">Credit Card Name</label>
+                    <input type="text" name="creditName" maxlength="50" id="creditName" placeholder="Credit Card Name">
+                </div>
 
-          <div class="input__box">
-            <label for="creditNum">Credit Card Number</label>
-            <input type="text" name="creditNum" maxlength="50" id="creditNum" placeholder="Credit Card Number">
-          </div>
+                <div class="input__box--checkout">
+                    <label for="creditNum">Credit Card Number</label>
+                    <input type="text" name="creditNum" maxlength="50" id="creditNum" placeholder="Credit Card Number">
+                </div>
+            </div>
+            <div class="checkout__container">
+                <div class="input__box--checkout">
+                    <label for="creditExpire">Expiry Date</label>
+                    <input type="text" name="creditExpire" maxlength="50" id="creditExpire" placeholder="Expiry Date">
+                </div>
 
 
-          <div class="input__box">
-            <label for="creditExpire">Expiry Date</label>
-            <input type="text" name="creditExpire" maxlength="50" id="creditExpire" placeholder="Expiry Date">
-          </div>
+                <div class="input__box--checkout">
+                    <label for="creditCsv">CSV Number</label>
+                    <input type="text" name="creditCsv" maxlength="50" id="creditCsv" placeholder="CSV Number">
+                </div>
+            </div>
+            <input class="button" type="submit" value="Login" name="submit">
 
-
-          <div class="input__box">
-            <label for="creditCsv">CSV Number</label>
-            <input type="text" name="creditCsv" maxlength="50" id="creditCsv" placeholder="CSV Number">
-          </div>
-
-          <input class="button" type="submit" value="Login" name="submit">
-    
         </form>
-      </section>
+    </section>
 
 </body>
 

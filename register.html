@@ -23,34 +23,38 @@
         <!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
 
         <form class="registration" action="">
+            <div class="registration__container">
+                <div class="input__box--register">
+                    <label for="firstname">First Name</label>
+                    <input type="text" name="firstname" maxlength="50" id="firstname" placeholder="First Name">
+                </div>
 
-            <div class="input__box">
-                <label for="firstname">First Name</label>
-                <input type="text" name="firstname" maxlength="50" id="firstname" placeholder="First Name">
+                <div class="input__box--register">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" name="lastname" maxlength="50" id="lastname" placeholder="Last Name">
+                </div>
             </div>
-
-            <div class="input__box">
-                <label for="lastname">Last Name</label>
-                <input type="text" name="lastname" maxlength="50" id="lastname" placeholder="Last Name">
-            </div>
-
-            <div class="input__box">
-                <label for="email">Email</label>
-                <input type="email" name="email" maxlength="50" id="email" placeholder="Last Name">
-            </div>
+            <div class="registration__container">
+                <div class="input__box--register">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" maxlength="50" id="email" placeholder="Last Name">
+                </div>
 
 
-            <div class="input__box">
-                <label for="username">Username</label>
-                <input type="text" name="username" maxlength="50" id="username" placeholder="Username">
+                <div class="input__box--register">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" maxlength="50" id="username" placeholder="Username">
+                </div>
             </div>
-            <div class="input__box">
-                <label for="pword">Password</label>
-                <input type="password" name="pword" maxlength="20" id="pword" placeholder="Password">
-            </div>
-            <div class="input__box">
-                <label for="pword">Re-enter Password</label>
-                <input type="password" name="pword" maxlength="20" id="pword" placeholder="Confirm Password">
+            <div class="registration__container">
+                <div class="input__box--register">
+                    <label for="pword">Password</label>
+                    <input type="password" name="pword" maxlength="20" id="pword" placeholder="Password">
+                </div>
+                <div class="input__box--register">
+                    <label for="pword">Re-enter Password</label>
+                    <input type="password" name="pword" maxlength="20" id="pword" placeholder="Confirm Password">
+                </div>
             </div>
             <input class="button" type="submit" value="Login" name="submit">
 
