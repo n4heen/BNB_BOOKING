@@ -18,10 +18,12 @@ nav {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #ff8c00;
 }
 
 section {
