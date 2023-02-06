@@ -1,8 +1,7 @@
 // 20408031 Naheen Habib Tuesday 12pm
 
 function checkoutValid(form){
-    var checkout;
-    checkout = false;
+    var checkout = false;
 
 //Credit Card Name Validation 
   if (requiredFieldEmpty(form.creditName)) invalid = true;

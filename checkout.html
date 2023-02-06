@@ -25,11 +25,12 @@
     <section class="checkout">
         <!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
         <h1 class="orange">Checkout</h1>
-        <form action="#" method="get" onsubmit="return validateForm(this)">
+        <form action="#" method="get" onsubmit="return checkoutValid(this)">
             <div class="checkout__container">
                 <div class="input__box--checkout">
                     <label for="creditName">Credit Card Name</label>
                     <input type="text" name="creditName" maxlength="50" id="creditName" onblur="nameValidate(this);" placeholder="Credit Card Name">
+                    <span id="creditNameRequire"> Please fill this field </span>
                 </div>
 
                 <div class="input__box--checkout">
