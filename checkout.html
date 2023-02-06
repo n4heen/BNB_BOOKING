@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>B&B Checkout</title>
     <link rel="stylesheet" href="style.css">
+    <script src="/actions.js"></script>
 </head>
 
 <body>
@@ -24,16 +25,20 @@
     <section class="checkout">
         <!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
         <h1 class="orange">Checkout</h1>
-        <form action="">
+        <form action="" method="post" onsubmit="return validateForm(this)">
             <div class="checkout__container">
                 <div class="input__box--checkout">
                     <label for="creditName">Credit Card Name</label>
-                    <input type="text" name="creditName" maxlength="50" id="creditName" placeholder="Credit Card Name">
+                    <input type="text" name="creditName" maxlength="50" id="creditName" onblur="validate(this);" placeholder="Credit Card Name">
+                    <span id="creditNameRequired"> Please fill this field </span>
                 </div>
 
                 <div class="input__box--checkout">
                     <label for="creditNum">Credit Card Number</label>
-                    <input type="text" name="creditNum" maxlength="50" id="creditNum" placeholder="Credit Card Number">
+                    <input type="text" name="creditNum" maxlength="50" id="creditNum"
+                        onblur="warningRegex(this, 'creditNumRequired')" placeholder="Credit Card Number">
+                    <span id="creditNumRequired"> Please fill this field </span>
+                    <span id="creditNum16"> Please enter 16 digits only </span>
                 </div>
             </div>
             <div class="checkout__container">
