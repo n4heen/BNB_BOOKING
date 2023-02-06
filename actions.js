@@ -1,5 +1,13 @@
 // 20408031 Naheen Habib Tuesday 12pm
 
+function nameValidate (element) {
+    if(!element.value.length) {
+        // element.labels[0].style.color = "#ff8c00";
+        // element.style.border = "1px #ff8c00 dashed";
+        return true;
+    } 
+    }
+
 function checkoutValid(form){
     var checkout = false;
 
@@ -8,6 +16,7 @@ function checkoutValid(form){
 
     if (form.creditNum.value.length === 0) {
         valid = true;
+        document.getElementById("creditNumRequired").innerText=""
         document.getElementById("creditNumRequired").style.display = "inline-block";
     }
 
@@ -20,19 +29,6 @@ function checkoutValid(form){
 
 
 }
-
-
-
-function nameValidate (element) {
-if(!element.value.length) {
-    // element.labels[0].style.color = "#ff8c00";
-    // element.style.border = "1px #ff8c00 dashed";
-    return true;
-} 
-}
-
-
-
 
 function showWarning(element, firstID, secondID, regEx) {
     let formString = element.value;
