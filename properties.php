@@ -1,6 +1,6 @@
 <!-- 20408031 Naheen Habib Tuesday 12pm -->
 <?php  
-
+require_once('dbconn.php')
 
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <title>B&B Properties</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
