@@ -25,7 +25,10 @@ require_once('dbconn.php')
         </nav>
     </header>
     <section>
-       
+        Properties Aval
+       <table>
+
+       </table>
     </section>
 </body>
 
