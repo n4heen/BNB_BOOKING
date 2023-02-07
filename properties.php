@@ -1,8 +1,4 @@
 <!-- 20408031 Naheen Habib Tuesday 12pm -->
-<?php  
-require_once('dbconn.php')
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,8 +21,37 @@ require_once('dbconn.php')
         </nav>
     </header>
     <section>
-        Properties Aval
+       <h1>Properties Available</h1>
        <table>
+<?php
+  // Connect to the database
+  $connection = mysqli_connect('localhost', 'twa076', 'twa076Wj', 'bnb_booking076');
+  // Check connection
+  if (!$connection) {
+   die("Connection failed: " . mysqli_connect_error());
+  }
+$sql = "SELECT property_name, property_beds, property_street, property_suburb, property_state, property_postcode, property_pernight, property_image FROM property";
+$result = mysqli_query($connection, $sql);
+// Check if there are any properties in the table
+if (mysqli_num_rows($result) > 0) {
+ // Loop through the result and display the properties
+ while($row = mysqli_fetch_assoc($result)) {
+  echo "<tr>";
+  echo "<td>" . $row["property_name"] . "</td>";
+  echo "<td>" . $row["property_beds"] . "</td>";
+  echo "<td>" . $row["property_street"] . " " . $row["property_suburb"] . " " . $row["property_state"] . " " . $row["property_postcode"] . "</td>";
+  echo "<td>" . "$" . $row["property_pernight"] . "</td>";
+  echo "<td><img src='" . $row["property_image"] . "'></td>";
+  echo "</tr>";
+ }
+} else {
+ echo "<tr>";
+ echo "<td colspan='5'>No properties found</td>";
+ echo "</tr>";
+}
+// Close the database connection
+mysqli_close($connection);
+?>
 
        </table>
     </section>
