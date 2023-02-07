@@ -18,19 +18,19 @@
       <a href="login.php">Login</a>
     </nav>
   </header>
-  <section class="login">
+  <section id="login">
     <!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
     <h1 class="orange">Login To Your Account</h1>
     <form action="">
       <div class="input__box">
         <label for="username">Username</label>
-        <input type="text" name="username" maxlength="50" id="username" placeholder="Username">
+        <input   onblur="nameValidate(this)"   type="text" name="username" maxlength="50" id="username" placeholder="Username">
       </div>
       <div class="input__box">
         <label for="pword">Password</label>
         <input type="password" name="pword" maxlength="20" id="pword" placeholder="Password">
       </div>
-      <input class="button" type="submit" value="Login" name="submit">
+      <input onblur="nameValidate(this)"  class="button" type="submit" value="Login" name="submit">
 
     </form>
   </section>

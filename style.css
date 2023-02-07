@@ -89,6 +89,10 @@ input {
 
 /*REGISTER PAGE*/
 
+#registration,#login{
+    margin-top: 5%;
+}
+
 .registration__container {
     display: flex;
     margin-bottom: 16px;

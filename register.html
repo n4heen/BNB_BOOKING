@@ -18,7 +18,7 @@
             <a href="login.html">Login</a>
         </nav>
     </header>
-    <section>
+    <section id="registration">
         <h1 class="orange">Registration</h1>
         <!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
 
@@ -33,29 +33,48 @@
                     <label for="lastname">Last Name</label>
                     <input type="text" name="lastname" maxlength="50" id="lastname" placeholder="Last Name">
                 </div>
-            </div>
-            <div class="registration__container">
                 <div class="input__box--register">
                     <label for="email">Email</label>
-                    <input type="email" name="email" maxlength="50" id="email" placeholder="Last Name">
+                    <input type="email" name="email" maxlength="50" id="email" placeholder="Email">
                 </div>
-
-
+            </div>
+            <div class="registration__container">
+                
                 <div class="input__box--register">
                     <label for="username">Username</label>
                     <input type="text" name="username" maxlength="50" id="username" placeholder="Username">
                 </div>
-            </div>
-            <div class="registration__container">
+
                 <div class="input__box--register">
                     <label for="pword">Password</label>
                     <input type="password" name="pword" maxlength="20" id="pword" placeholder="Password">
                 </div>
+
+
                 <div class="input__box--register">
-                    <label for="pword">Re-enter Password</label>
-                    <input type="password" name="pword" maxlength="20" id="pword" placeholder="Confirm Password">
+                    <label for="street">Street</label>
+                    <input type="street" name="street" maxlength="50" id="street" placeholder="Street">
                 </div>
             </div>
+
+          
+
+            <div class="registration__container">
+                <div class="input__box--register">
+                    <label for="suburb">Suburb</label>
+                    <input type="address" name="suburb" maxlength="50" id="suburb" placeholder="Suburb">
+                </div>
+                <div class="input__box--register">
+                    <label for="state">State</label>
+                    <input type="text" name="state" maxlength="50" id="state" placeholder="State">
+                </div>
+
+                <div class="input__box--register">
+                    <label for="postcode">Postcode</label>
+                    <input type="text" name="postcode" maxlength="50" id="postcode" placeholder="Postcode">
+                </div>
+            </div>
+
             <input class="button" type="submit" value="Login" name="submit">
 
         </form>

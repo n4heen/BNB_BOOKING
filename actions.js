@@ -1,30 +1,34 @@
 // 20408031 Naheen Habib Tuesday 12pm
 
-function nameValidate (element) {
-    if(!element.value.length) {
-        // element.labels[0].style.color = "#ff8c00";
-        // element.style.border = "1px #ff8c00 dashed";
-        return true;
-    } 
-    }
 
-function checkoutValid(form){
+//Login Validation
+function nameValidate(element) {
+    if(!element.value.length) {
+        element.labels[0].style.color = "red";
+        element.style.border = "1px red dashed";
+    } else {
+        element.labels[0].style.color = "black";
+        element.style.border = "1px #ccc solid";
+    }
+}
+
+function checkoutValid(form) {
     var checkout = false;
 
-//Credit Card Name Validation 
-  if (requiredFieldEmpty(form.creditName)) invalid = true;
+    //Credit Card Name Validation 
+    if (requiredFieldEmpty(form.creditName)) invalid = true;
 
     if (form.creditNum.value.length === 0) {
         valid = true;
-        document.getElementById("creditNumRequired").innerText=""
+        document.getElementById("creditNumRequired").innerText = ""
         document.getElementById("creditNumRequired").style.display = "inline-block";
     }
 
-    if(invalid) {
+    if (invalid) {
         document.getElementById('form-error').style.display = "inline-block";    //display the error message
         return false;       //stop the form submitting
     }
-    return true;  
+    return true;
 
 
 
@@ -49,11 +53,11 @@ function showWarning(element, firstID, secondID, regEx) {
 }
 
 
-function warningRegex(element,id){
+function warningRegex(element, id) {
     document.getElementById(id).style.display = "none";
 
     if (id == "clubNumber_required_input") {
-    
+
         let regEx = /[0-9]{16}/;//0000
         showWarning(element, "creditNumRequired", "creditNum16", regEx);
 
