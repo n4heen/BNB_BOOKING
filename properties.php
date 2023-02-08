@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>B&B Properties</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
     <section>
        <h1>Properties Available</h1>
        <table>
-<?php
+<!-- <?php
   // Connect to the database
   $connection = mysqli_connect('localhost', 'twa076', 'twa076Wj', 'bnb_booking076');
   // Check connection
@@ -51,7 +51,7 @@ if (mysqli_num_rows($result) > 0) {
 }
 // Close the database connection
 mysqli_close($connection);
-?>
+?> -->
 
        </table>
     </section>
