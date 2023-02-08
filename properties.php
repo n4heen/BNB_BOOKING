@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>B&B Properties</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
