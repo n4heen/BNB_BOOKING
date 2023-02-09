@@ -25,11 +25,8 @@
        <table>
 <?php
   // Connect to the database
-  $connection = mysqli_connect('localhost', 'twa076', 'twa076Wj', 'bnb_booking076');
-  // Check connection
-  if (!$connection) {
-   die("Connection failed: " . mysqli_connect_error());
-  }
+  require_once'dbconn.php';
+  
 $sql = "SELECT property_name, property_beds, property_street, property_suburb, property_state, property_postcode, property_pernight, property_image FROM property";
 $result = mysqli_query($connection, $sql);
 // Check if there are any properties in the table
