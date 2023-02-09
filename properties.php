@@ -29,7 +29,7 @@
   
 $sql = "SELECT property_name, property_beds, property_street, property_suburb, property_state, property_postcode, property_pernight, property_image FROM property";
 $result = mysqli_query($connection, $sql);
-// Check if there are any properties in the table
+// If there are any properties in the table
 if (mysqli_num_rows($result) > 0) {
  // Loop through the result and display the properties
  while($row = mysqli_fetch_assoc($result)) {
@@ -42,9 +42,9 @@ if (mysqli_num_rows($result) > 0) {
   echo "</tr>";
  }
 } else {
- echo "<tr>";
- echo "<td colspan='5'>No properties found</td>";
- echo "</tr>";
+
+ echo "<h1>No Properties Available</h1>";
+
 }
 // Close the database connection
 mysqli_close($connection);

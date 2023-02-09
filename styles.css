@@ -67,6 +67,12 @@ p {
     margin-bottom: 16px;
 }
 
+table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /*LOGIN PAGE*/
 
 form {
