@@ -34,11 +34,12 @@ if (mysqli_num_rows($result) > 0) {
  // Loop through the result and display the properties
  while($row = mysqli_fetch_assoc($result)) {
   echo "<tr>";
+  echo "<td><img src='" . $row["property_image"] . "'></td>";
   echo "<td>" . $row["property_name"] . "</td>";
   echo "<td>" . $row["property_beds"] ." "."bedrooms". "</td>";
   echo "<td>" . $row["property_street"] . " " . $row["property_suburb"] . " " . $row["property_state"] . " " . $row["property_postcode"] . "</td>";
   echo "<td>" . "$" . $row["property_pernight"] . "</td>";
-  echo "<td><img src='" . $row["property_image"] . "'></td>";
+
   echo "</tr>";
  }
 } else {
