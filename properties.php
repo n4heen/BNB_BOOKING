@@ -20,8 +20,8 @@
             <a href="login.html">Login</a>
         </nav>
     </header>
-    <section>
-       <h1>Properties Available</h1>
+    <section id="properties">
+        <h1 class="orange">Properties Available</h1>
        <table>
 <!-- <?php
   // Connect to the database
