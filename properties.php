@@ -21,9 +21,9 @@
         </nav>
     </header>
     <section id="properties">
-        <h1 class="orange">Properties Available</h1>
+       <h1 class='orange'>Properties Available</h1>
        <table>
-<!-- <?php
+<?php
   // Connect to the database
   $connection = mysqli_connect('localhost', 'twa076', 'twa076Wj', 'bnb_booking076');
   // Check connection
@@ -51,7 +51,7 @@ if (mysqli_num_rows($result) > 0) {
 }
 // Close the database connection
 mysqli_close($connection);
-?> -->
+?> 
 
        </table>
     </section>

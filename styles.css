@@ -13,7 +13,7 @@
 nav {
     margin-top: 16px;
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
 }
 
 a {
@@ -62,6 +62,11 @@ p {
 
 /*PROPERTIES PAGE*/
 
+#properties {
+    margin-top: 5%;
+    margin-bottom: 16px;
+}
+
 /*LOGIN PAGE*/
 
 form {
@@ -89,7 +94,8 @@ input {
 
 /*REGISTER PAGE*/
 
-#registration,#login,#properties{
+#registration,
+#login {
     margin-top: 5%;
 }
 
@@ -110,6 +116,7 @@ input {
     display: flex;
     margin-bottom: 16px;
 }
+
 .input__box--checkout {
     display: flex;
     flex-direction: column;
@@ -117,8 +124,8 @@ input {
 }
 
 @media screen and (min-width: 768px) {
- /*  HOME PAGE*/
- /* nav {
+    /*  HOME PAGE*/
+    /* nav {
     margin-top: 16px;
     display: flex;
     justify-content: space-evenly;
