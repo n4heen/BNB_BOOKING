@@ -1,4 +1,44 @@
 <!-- 20408031 Naheen Habib Tuesday 12pm -->
+<?php
+
+session_start();
+
+// Check if the form has been submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Connect to the database
+    // $conne = mysqli_connect("localhost", "twa091", "twa091CT", "bnb_booking091");
+
+    $connection = new mysqli('localhost', 'twa076', 'twa076Wj', 'bnb_booking076'); 
+    // Escape user inputs for security
+    $user_email= mysqli_real_escape_string($connection, $_POST['user_email']);
+    $user_password= hash('sha256', mysqli_real_escape_string($connection, $_POST['user_password']));
+    $user_fname= mysqli_real_escape_string($connection, $_POST['user_fname']);
+    $user_lname= mysqli_real_escape_string($connection, $_POST['user_lname']);
+    $user_street= mysqli_real_escape_string($connection, $_POST['user_street']);
+    $user_suburb= mysqli_real_escape_string($connection, $_POST['user_suburb']);
+    $user_state= mysqli_real_escape_string($connection, $_POST['user_state']);
+    $user_postcode= mysqli_real_escape_string($connection, $_POST['user_postcode']);
+    $user_type = 'General';
+
+    // Insert the user into the database
+    $sql = "INSERT INTO user (user_email, user_password, user_fname, user_lname, user_street, user_suburb, user_state, user_postcode, user_type) VALUES ('$user_email', '$user_password', '$user_fname', '$user_lname', '$user_street', '$user_suburb', '$user_state', '$user_postcode', '$user_type')";
+    mysqli_query($connection, $sql);
+
+    // Get the user's ID
+    $user_id = mysqli_insert_id($connection);
+
+    // Close the connection
+    mysqli_close($connection);
+
+    // Store the user's ID in a session
+    $_SESSION['user_id'] = $user_id;
+
+    // Redirect the user to the home page
+    header("Location: index.php");
+    exit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,7 +130,7 @@
                 </div>
             </div>
 
-            <input class="button" type="submit" value="Login" name="submit">
+            <input class="button" type="submit" value="Register" name="submit">
 
         </form>
     </section>
