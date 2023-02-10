@@ -6,22 +6,24 @@ session_start();
 // Check if the form has been submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Connect to the database
-    // $conne = mysqli_connect("localhost", "twa091", "twa091CT", "bnb_booking091");
 
-    $connection = new mysqli('localhost', 'twa076', 'twa076Wj', 'bnb_booking076'); 
+    $connection = mysqli_connect('localhost', 'twa076', 'twa076Wj', 'bnb_booking076'); 
     // Escape user inputs for security
-    $user_email= mysqli_real_escape_string($connection, $_POST['user_email']);
-    $user_password= hash('sha256', mysqli_real_escape_string($connection, $_POST['user_password']));
-    $user_fname= mysqli_real_escape_string($connection, $_POST['user_fname']);
-    $user_lname= mysqli_real_escape_string($connection, $_POST['user_lname']);
-    $user_street= mysqli_real_escape_string($connection, $_POST['user_street']);
-    $user_suburb= mysqli_real_escape_string($connection, $_POST['user_suburb']);
-    $user_state= mysqli_real_escape_string($connection, $_POST['user_state']);
-    $user_postcode= mysqli_real_escape_string($connection, $_POST['user_postcode']);
+    $firstname= mysqli_real_escape_string($connection, $_POST['firstname']);
+    $lastname= mysqli_real_escape_string($connection, $_POST['lastname']);
+    $email= mysqli_real_escape_string($connection, $_POST['email']);
+    $username= mysqli_real_escape_string($connection, $_POST['username']);
+    $pword= hash('sha256', mysqli_real_escape_string($connection, $_POST['pword']));
+    $street= mysqli_real_escape_string($connection, $_POST['street']);
+    $suburb= mysqli_real_escape_string($connection, $_POST['suburb']);
+    $state= mysqli_real_escape_string($connection, $_POST['state']);
+    $postcode= mysqli_real_escape_string($connection, $_POST['postcode']);
+
     $user_type = 'General';
 
     // Insert the user into the database
-    $sql = "INSERT INTO user (user_email, user_password, user_fname, user_lname, user_street, user_suburb, user_state, user_postcode, user_type) VALUES ('$user_email', '$user_password', '$user_fname', '$user_lname', '$user_street', '$user_suburb', '$user_state', '$user_postcode', '$user_type')";
+    $sql = "INSERT INTO user (firstname,lastname, email,username, pword, street, suburb, state, postcode, user_type) VALUES ('$firstname','$lastname','$email','$username', '$pword',   '$street', '$suburb', '$state', '$postcode', '$user_type')";
+
     mysqli_query($connection, $sql);
 
     // Get the user's ID
