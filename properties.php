@@ -13,15 +13,16 @@ session_start();
 
 <body>
     <header>
-        <nav>
+    <nav>
 
-            <a href="index.html">Home</a>
-            <a href="properties.php">Properties</a>
-            <a href="bookings.php">Bookings</a>
-            <a href="profile.php">My Profile</a>
-            <a href="register.html">Register</a>
-            <a href="login.html">Login</a>
-        </nav>
+<a href="index.html">Home</a>
+<a href="properties.php">Properties</a>
+<a href="bookings.php">Bookings</a>
+<a href="profile.php">My Profile</a>
+<a href="register.html">Register</a>
+<a href="login.html">Login</a>
+<a href="logoff.php">Logout</a>
+</nav>
     </header>
     <section id="properties">
        <h1 class='orange'>Properties Available</h1>
