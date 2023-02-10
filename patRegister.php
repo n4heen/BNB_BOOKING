@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  <title>Registration Page</title>
 </head>
 <body>
- <?php include 'nav.php'; ?>
+
  <h1>Register a New Account</h1>
  <form action="register.php" method="post">
  
