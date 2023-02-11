@@ -2,19 +2,19 @@
 <?php
   session_start(); 
  
-  if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
+  $connect = mysqli_connect("localhost", "twa076", "twa076Wj", "bnb_booking076");
+
+
+  if (isset($_SESSION['logged_in'])) {
     header('Location: index.html'); 
   }
  
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  
     $user_email = $_POST['user_email'];
     $user_password = hash('sha256', $_POST['user_password']); 
-   
+
   
-    $conn = mysqli_connect("localhost", "twa076", "twa076Wj", "bnb_booking076");
-    $query = "SELECT * FROM user WHERE user_email = '$user_email' AND user_password = '$user_password'";
-    $result = mysqli_query($conn, $query);
+    $result = mysqli_query($connect, "SELECT * FROM user WHERE user_email = '$user_email' AND user_password = '$user_password'");
    
     if (mysqli_num_rows($result) == 1) {
    
@@ -22,7 +22,7 @@
       $_SESSION['user_email'] = $user_email;
       header('Location: index.html');
     } else {
-      echo '<p>Email or password is incorrect. Please try again.</p>';
+      echo 'Incorrect Login';
     }
   }
 ?>
@@ -53,7 +53,7 @@
   <section id="login">
    
     <h1 class="orange">Login To Your Account</h1>
-    <form action="" method="post">
+    <form method="post">
 
       <div class="input__box">
         <label for="user_email">Email</label>

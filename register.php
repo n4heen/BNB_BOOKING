@@ -5,32 +5,31 @@ session_start();
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Connect to the database
-    $conn = mysqli_connect("localhost", "twa076", "twa076Wj", "bnb_booking076");
+
+    $connection = mysqli_connect("localhost", "twa076", "twa076Wj", "bnb_booking076");
 
  
-    $user_email= mysqli_real_escape_string($conn, $_POST['user_email']);
-    $user_password= hash('sha256', mysqli_real_escape_string($conn, $_POST['user_password']));
-    $user_fname= mysqli_real_escape_string($conn, $_POST['user_fname']);
-    $user_lname= mysqli_real_escape_string($conn, $_POST['user_lname']);
-    $user_street= mysqli_real_escape_string($conn, $_POST['user_street']);
-    $user_suburb= mysqli_real_escape_string($conn, $_POST['user_suburb']);
-    $user_state= mysqli_real_escape_string($conn, $_POST['user_state']);
-    $user_postcode= mysqli_real_escape_string($conn, $_POST['user_postcode']);
-    $user_type = 'General';
-
+    $email= mysqli_real_escape_string($connection, $_POST['user_email']);
+    $password= hash('sha256', mysqli_real_escape_string($connection, $_POST['user_password']));
+    $fname= mysqli_real_escape_string($connection, $_POST['user_fname']);
+    $lname= mysqli_real_escape_string($connection, $_POST['user_lname']);
+    $street= mysqli_real_escape_string($connection, $_POST['user_street']);
+    $suburb= mysqli_real_escape_string($connection, $_POST['user_suburb']);
+    $state= mysqli_real_escape_string($connection, $_POST['user_state']);
+    $postcode= mysqli_real_escape_string($connection, $_POST['user_postcode']);
+    $type = 'General';
    
-    $sql = "INSERT INTO user (user_email, user_password, user_fname, user_lname, user_street, user_suburb, user_state, user_postcode, user_type) VALUES ('$user_email', '$user_password', '$user_fname', '$user_lname', '$user_street', '$user_suburb', '$user_state', '$user_postcode', '$user_type')";
-    mysqli_query($conn, $sql);
+    $sql = "INSERT INTO user (user_email, user_password, user_fname, user_lname, user_street, user_suburb, user_state, user_postcode, user_type) VALUES ('$email',
+     '$password', '$fname', '$lname', '$street', '$suburb', '$state', '$postcode','$type')";
+    mysqli_query($connection, $sql);
 
 
-    $user_id = mysqli_insert_id($conn);
+    $id = mysqli_insert_id($connection);
 
-    mysqli_close($conn);
+    $_SESSION['user_id'] = $id;
 
-    $_SESSION['user_id'] = $user_id;
-
-   
+    mysqli_close($connection);
+    
     header("Location: index.html");
     exit();
 }
