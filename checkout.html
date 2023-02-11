@@ -32,17 +32,17 @@
                 <div class="input__box--checkout">
                     <label for=" creditName">Credit Card Name</label>
                     <input type="text" name="creditName" id=" creditName" placeholder="Credit Card Name"
-                        onblur="validationRequired(this,document.getElementById('creditCardNameError'));">
-                    <span style="color:red;" id="creditCardNameError"></span>
+                        onblur="fillOutRequired(this,document.getElementById('creditCardNameError'));">
+                    <span style="color:#ff8c00;" id="creditCardNameError"></span>
                 </div>
 
 
                 <div class="input__box--checkout">
                     <label for="creditNum">Credit Card Number</label>
                     <input type="text" name="creditNum" maxlength="16" id="creditNum"
-                        onblur="creditCardNumber(this,document.getElementById('creditCardNumberError'));"
+                        onblur="creditCardNumValidate(this,document.getElementById('creditCardNumberError'));"
                         placeholder="Credit Card Number">
-                    <span style="color:red;" id="creditCardNumberError"></span>
+                    <span style="color:#ff8c00;" id="creditCardNumberError"></span>
                 </div>
 
 
@@ -53,15 +53,15 @@
                     <input type="date" name="creditExpire" maxlength="50" id="creditExpire"
                         onblur="validateExpiryDate(this,document.getElementById('expiryDateError'));"
                         placeholder="Expiry Date">
-                    <span style="color:red;" id="expiryDateError"></span>
+                    <span style="color:#ff8c00;" id="expiryDateError"></span>
                 </div>
 
 
                 <div class="input__box--checkout">
                     <label for="creditCsv">CSV Number</label>
                     <input type="text" name="creditCsv" maxlength="3" id="creditCsv"
-                        onblur="csvNumberRegex(this,document.getElementById('CsvError'));" placeholder="CSV Number">
-                    <span style="color:red;" id="CsvError"></span>
+                        onblur="csvValidate(this,document.getElementById('CsvError'));" placeholder="CSV Number">
+                    <span style="color:#ff8c00;" id="CsvError"></span>
                 </div>
             </div>
             <input class="button" type="submit" value="Login" name="submit">

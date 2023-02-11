@@ -1,82 +1,82 @@
 <!-- 20408031 Naheen Habib Tuesday 12pm -->
 <?php
 
-// session_start();
+session_start();
 
-// // Check if the form has been submitted
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//     // Connect to the database
+// Check if the form has been submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Connect to the database
 
-//     $connection = new mysqli('localhost', 'twa076', 'twa076Wj', 'bnb_booking076'); ); 
-//     // Escape user inputs for security
-//     $user_fname= mysqli_real_escape_string($connection, $_POST['user_fname']);
-//     $user_lname= mysqli_real_escape_string($connection, $_POST['user_lname']);
-//     $user_email= mysqli_real_escape_string($connection, $_POST['user_email']);
-//     $username= mysqli_real_escape_string($connection, $_POST['username']);
-//     $user_password= hash('sha256', mysqli_real_escape_string($connection, $_POST['user_password']));
-//     $user_street= mysqli_real_escape_string($connection, $_POST['user_street']);
-//     $user_suburb= mysqli_real_escape_string($connection, $_POST['user_suburb']);
-//     $user_state= mysqli_real_escape_string($connection, $_POST['user_state']);
-//     $user_postcode= mysqli_real_escape_string($connection, $_POST['user_postcode']);
+    $connection = new mysqli('localhost', 'twa076', 'twa076Wj', 'bnb_booking076'); ); 
+    // Escape user inputs for security
+    $user_fname= mysqli_real_escape_string($connection, $_POST['user_fname']);
+    $user_lname= mysqli_real_escape_string($connection, $_POST['user_lname']);
+    $user_email= mysqli_real_escape_string($connection, $_POST['user_email']);
+    $username= mysqli_real_escape_string($connection, $_POST['username']);
+    $user_password= hash('sha256', mysqli_real_escape_string($connection, $_POST['user_password']));
+    $user_street= mysqli_real_escape_string($connection, $_POST['user_street']);
+    $user_suburb= mysqli_real_escape_string($connection, $_POST['user_suburb']);
+    $user_state= mysqli_real_escape_string($connection, $_POST['user_state']);
+    $user_postcode= mysqli_real_escape_string($connection, $_POST['user_postcode']);
 
-//     $user_type = 'General';
+    $user_type = 'General';
 
-//     // Insert the user into the database
-//     $sql = "INSERT INTO user (user_fname,user_lname, user_email,username, user_password, user_street, user_suburb, user_state, user_postcode, user_type) VALUES ('$user_fname','$user_lname','$user_email','$username', '$user_password',   '$user_street', '$user_suburb', '$user_state', '$user_postcode', '$user_type')";
+    // Insert the user into the database
+    $sql = "INSERT INTO user (user_fname,user_lname, user_email,username, user_password, user_street, user_suburb, user_state, user_postcode, user_type) VALUES ('$user_fname','$user_lname','$user_email','$username', '$user_password',   '$user_street', '$user_suburb', '$user_state', '$user_postcode', '$user_type')";
 
-//     mysqli_query($connection, $sql);
+    mysqli_query($connection, $sql);
 
-//     // Get the user's ID
-//     $user_id = mysqli_insert_id($connection);
+    // Get the user's ID
+    $user_id = mysqli_insert_id($connection);
 
-//     // Close the connection
-//     mysqli_close($connection);
+    // Close the connection
+    mysqli_close($connection);
 
-//     // Store the user's ID in a session
-//     $_SESSION['user_id'] = $user_id;
+    // Store the user's ID in a session
+    $_SESSION['user_id'] = $user_id;
 
-//     // Redirect the user to the home page
-//     header("Location: index.php");
-//     exit();
-// }
+    // Redirect the user to the home page
+    header("Location: index.php");
+    exit();
+}
 
 
 
-// session_start();
+session_start();
 
-// // Check if the form has been submitted
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//     // Connect to the database
-//     $conn = mysqli_connect('localhost', 'twa076', 'twa076Wj', 'bnb_booking076'); 
+// Check if the form has been submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Connect to the database
+    $conn = mysqli_connect('localhost', 'twa076', 'twa076Wj', 'bnb_booking076'); 
 
-//     // Escape user inputs for security
-//     $user_email= mysqli_real_escape_string($conn, $_POST['user_email']);
-//     $user_password= hash('sha256', mysqli_real_escape_string($conn, $_POST['user_password']));
-//     $user_fname= mysqli_real_escape_string($conn, $_POST['user_fname']);
-//     $user_lname= mysqli_real_escape_string($conn, $_POST['user_lname']);
-//     $user_street= mysqli_real_escape_string($conn, $_POST['user_street']);
-//     $user_suburb= mysqli_real_escape_string($conn, $_POST['user_suburb']);
-//     $user_state= mysqli_real_escape_string($conn, $_POST['user_state']);
-//     $user_postcode= mysqli_real_escape_string($conn, $_POST['user_postcode']);
-//     $user_type = 'General';
+    // Escape user inputs for security
+    $user_email= mysqli_real_escape_string($conn, $_POST['user_email']);
+    $user_password= hash('sha256', mysqli_real_escape_string($conn, $_POST['user_password']));
+    $user_fname= mysqli_real_escape_string($conn, $_POST['user_fname']);
+    $user_lname= mysqli_real_escape_string($conn, $_POST['user_lname']);
+    $user_street= mysqli_real_escape_string($conn, $_POST['user_street']);
+    $user_suburb= mysqli_real_escape_string($conn, $_POST['user_suburb']);
+    $user_state= mysqli_real_escape_string($conn, $_POST['user_state']);
+    $user_postcode= mysqli_real_escape_string($conn, $_POST['user_postcode']);
+    $user_type = 'General';
 
-//     // Insert the user into the database
-//     $sql = "INSERT INTO user (user_fname,user_lname, user_email, user_password, user_street, user_suburb, user_state, user_postcode, user_type) VALUES ('$user_email', '$user_password', '$user_fname', '$user_lname', '$user_street', '$user_suburb', '$user_state', '$user_postcode', '$user_type')";
-//     mysqli_query($conn, $sql);
+    // Insert the user into the database
+    $sql = "INSERT INTO user (user_fname,user_lname, user_email, user_password, user_street, user_suburb, user_state, user_postcode, user_type) VALUES ('$user_email', '$user_password', '$user_fname', '$user_lname', '$user_street', '$user_suburb', '$user_state', '$user_postcode', '$user_type')";
+    mysqli_query($conn, $sql);
 
-//     // Get the user's ID
-//     $user_id = mysqli_insert_id($conn);
+    // Get the user's ID
+    $user_id = mysqli_insert_id($conn);
 
-//     // Close the connection
-//     mysqli_close($conn);
+    // Close the connection
+    mysqli_close($conn);
 
-//     // Store the user's ID in a session
-//     $_SESSION['user_id'] = $user_id;
+    // Store the user's ID in a session
+    $_SESSION['user_id'] = $user_id;
 
-//     // Redirect the user to the home page
-//     header("Location: index.php");
-//     exit();
-// }
+    // Redirect the user to the home page
+    header("Location: index.php");
+    exit();
+}
 
  ?>
 
@@ -112,33 +112,31 @@
                 <div class="input__box--register">
 
                     <label for="user_fname">First Name</label>
-                    <input type="text" name="user_fname"" id=" user_fname" placeholder="First Name"
-                        onblur="ValidateRegistrationName(this,document.getElementById('firstNameError'));">
-                    <span style="color:red;" id="firstNameError"></span>
+                    <input type="text" name="user_fname" id=" user_fname" placeholder="First Name"
+                        onblur="registrationNameValidate(this,document.getElementById('firstNameError'));">
+                    <span style="color:#ff8c00;" id="firstNameError"></span>
 
                 </div>
 
                 <div class="input__box--register">
                     <label for="user_lname">Last Name</label>
-                    <!-- <input type="text" name="user_lname" id="user_lname" placeholder="Last Name"> -->
-
-                    <input type="text" name="user_lname"" id=" user_lname" placeholder="Last Name"
-                        onblur="ValidateRegistrationName(this,document.getElementById('lastNameError'));">
-                    <span style="color:red;" id="lastNameError"></span>
+                    <input type="text" name="user_lname" id=" user_lname" placeholder="Last Name"
+                        onblur="registrationNameValidate(this,document.getElementById('lastNameError'));">
+                    <span style="color:#ff8c00;" id="lastNameError"></span>
 
                 </div>
 
                 <div class="input__box--register">
                     <label for="user_email">Email</label>
                     <input type="email" name="user_email" id="user_email"
-                        onblur="ValidateEmail(this,document.getElementById('emailError'));" placeholder="Email">
-                    <span style="color:red;" id="emailError"></span>
+                        onblur="emailValidate(this,document.getElementById('emailError'));" placeholder="Email">
+                    <span style="color:#ff8c00;" id="emailError"></span>
                 </div>
                 <div class="input__box--register">
                     <label for="user_password">Password</label>
                     <input type="password" name="user_password" id="user_password"
-                        onblur="ValidatePassword(this,document.getElementById('registerPwordError'));" placeholder="Password">
-                    <span style="color:red;" id="registerPwordError"></span>
+                        onblur="passwordValidate(this,document.getElementById('registerPwordError'));" placeholder="Password">
+                    <span style="color:#ff8c00;" id="registerPwordError"></span>
                 </div>
             </div>
 
@@ -149,24 +147,24 @@
                 <div class="input__box--register">
                     <label for="user_street">Street</label>
 
-                    <input type="text" name="user_street"" id=" user_street" placeholder="Street"
-                        onblur="validationRequired(this,document.getElementById('streetError'));">
-                    <span style="color:red;" id="streetError"></span>
+                    <input type="text" name="user_street" id=" user_street" placeholder="Street"
+                        onblur="fillOutRequired(this,document.getElementById('streetError'));">
+                    <span style="color:#ff8c00;" id="streetError"></span>
                 </div>
                 <div class="input__box--register">
                     <label for="user_suburb">Suburb</label>
 
-                    <input type="text" name="user_suburb"" id=" user_suburb" placeholder="Suburb"
-                        onblur="validationRequired(this,document.getElementById('suburbError'));">
-                    <span style="color:red;" id="suburbError"></span>
+                    <input type="text" name="user_suburb" id=" user_suburb" placeholder="Suburb"
+                        onblur="fillOutRequired(this,document.getElementById('suburbError'));">
+                    <span style="color:#ff8c00;" id="suburbError"></span>
                 </div>
 
 
                 <div class="input__box--register">
                     <label for="state">State</label>
                     <input type="text" name="state" id="state"
-                        onblur="ValidateState(this,document.getElementById('stateError'));" placeholder="State">
-                    <span style="color:red;" id="stateError"></span>
+                        onblur="stateValidate(this,document.getElementById('stateError'));" placeholder="State">
+                    <span style="color:#ff8c00;" id="stateError"></span>
 
 
                 </div>
@@ -174,8 +172,8 @@
                 <div class="input__box--register">
                     <label for="user_postcode">Postcode</label>
                     <input type="text" name="user_postcode" maxlength="4" id="user_postcode"
-                        onblur="postCode(this,document.getElementById('postcodeError'));" placeholder="Postcode">
-                    <span style="color:red;" id="postcodeError"></span>
+                        onblur="postcodeValidate(this,document.getElementById('postcodeError'));" placeholder="Postcode">
+                    <span style="color:#ff8c00;" id="postcodeError"></span>
                 </div>
             </div>
 

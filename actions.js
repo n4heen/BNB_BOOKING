@@ -1,28 +1,29 @@
 // 20408031 Naheen Habib Tuesday 12pm
 
-function validationRequired(input, msg) {
+// Validation for if a input is empty
+function fillOutRequired(input, text) {
     if (!input.value.length) {
-        msg.innerHTML = "Please fill out field";
+        text.innerHTML = "Please fill out field";
     } else {
-        msg.innerHTML = "";
+        text.innerHTML = "";
     }
 }
 
 
+// Validation for registration name
+function registrationNameValidate(input, text) {
+    var registrationName = input.value;
+    var registrationNameRegex = /^[A-Z][a-z]+$/;
 
-function ValidateRegistrationName(obj, msg) {
-    var name = obj.value;
-    var regExpression = /^[A-Z][a-z]+$/;
-
-    if (!obj.value.length) {
-        msg.innerHTML = "Please fill out field";
+    if (!input.value.length) {
+        text.innerHTML = "Please fill out field";
     }
 
-    else if (!regExpression.test(name)) {
-        msg.innerHTML = "Name must start with a capital letter";
+    else if (!registrationNameRegex.test(registrationName)) {
+        text.innerHTML = "Name must start with a capital letter";
     }
     else {
-        msg.innerHTML = "";
+        text.innerHTML = "";
     }
 
     return;
@@ -30,20 +31,20 @@ function ValidateRegistrationName(obj, msg) {
 
 
 
-
-function creditCardNumber(obj, msg) {
-    var regex = /^\d{16}$/;
-    var creditCard = obj.value;
-    if (!obj.value.length) {
-        msg.innerHTML = "Please fill out field";
+// Validation for credit card number
+function creditCardNumValidate(input, text) {
+    var creditCardNum = input.value;
+    var creditCardNumRegex = /^\d{16}$/;
+    if (!input.value.length) {
+        text.innerHTML = "Please fill out field";
     }
-    else if (creditCard.length != 0) {
-        if (isNaN(creditCard))
-            msg.innerHTML = "Numbers only please.";
-        else if (!regex.test(creditCard)) {
-            msg.innerHTML = "Please enter value under 16 digits"
+    else if (creditCardNum.length != 0) {
+        if (isNaN(creditCardNum))
+            text.innerHTML = "Numbers only please.";
+        else if (!creditCardNumRegex.test(creditCardNum)) {
+            text.innerHTML = "Please enter value under 16 digits"
         } else {
-            msg.innerHTML = ""
+            text.innerHTML = ""
         }
     }
     return;
@@ -51,99 +52,101 @@ function creditCardNumber(obj, msg) {
 }
 
 
-// function validateExpiryDate(date, msg) {
+// function validateExpiryDate(date, text) {
 //     var today = new Date();
 //     var expiry = new Date(date);
 
 
 //     if (validateExpiryDate(today)) {
-//         msg.innerHTML = "invalid expiry date";
+//         text.innerHTML = "invalid expiry date";
 //     } else {
-//         msg.innerHTML = ""
+//         text.innerHTML = ""
 //     }
 //     return expiry > today;
 // }
 
-
-function csvNumberRegex(obj, msg) {
-    var regex = /^\d{3}$/;
-    var csvNumber = obj.value;
-    if (!obj.value.length) {
-        msg.innerHTML = "Please fill out field";
+// Validation for CSV number
+function csvValidate(input, text) {
+    var csvNumber = input.value;
+    var csvRegex = /^\d{3}$/;
+    if (!input.value.length) {
+        text.innerHTML = "Please fill out field";
     }
     else if (csvNumber.length != 0) {
         if (isNaN(csvNumber))
-            msg.innerHTML = "Numbers only please.";
-        else if (!regex.test(csvNumber)) {
-            msg.innerHTML = "Please enter value under 3 digits"
+            text.innerHTML = "Numbers only please.";
+        else if (!csvRegex.test(csvNumber)) {
+            text.innerHTML = "Please enter value under 3 digits"
         } else {
-            msg.innerHTML = ""
+            text.innerHTML = ""
         }
     }
     return;
 }
 
-function postCode(obj, msg) {
-    var postCodeRegex = /^\d{4}$/;
-    var postCode = obj.value;
-    if (!obj.value.length) {
-        msg.innerHTML = "Please fill out field";
+// Validation for postcode
+function postcodeValidate(input, text) {
+    var postcode = input.value;
+    var postcodeRegex = /^\d{4}$/;
+    if (!input.value.length) {
+        text.innerHTML = "Please fill out field";
     }
-    else if (postCode.length != 0) {
-        if (isNaN(postCode))
-            msg.innerHTML = "Numbers only please.";
-        else if (!postCodeRegex.test(postCode)) {
-            msg.innerHTML = "Please enter value under 4 digits"
+    else if (postcode.length != 0) {
+        if (isNaN(postcode))
+            text.innerHTML = "Numbers only please.";
+        else if (!postcodeRegex.test(postcode)) {
+            text.innerHTML = "Please enter value under 4 digits"
         } else {
-            msg.innerHTML = ""
+            text.innerHTML = ""
         }
     }
     return;
 }
 
-
-function ValidateEmail(obj, msg) {
-    var email = obj.value;
-    var regExpression = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!obj.value.length) {
-        msg.innerHTML = "Please fill out field";
+// Validation for email address
+function emailValidate(input, text) {
+    var email = input.value;
+    var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!input.value.length) {
+        text.innerHTML = "Please fill out field";
     }
-    else if (!regExpression.test(email)) {
-        msg.innerHTML = "Invalid email address.";
+    else if (!emailRegex.test(email)) {
+        text.innerHTML = "Invalid email address.";
     }
     else {
-        msg.innerHTML = "";
+        text.innerHTML = "";
     }
     return;
 }
 
-function ValidatePassword(obj, msg) {
-    var password = obj.value;
-    var regExpression = /^(?=.*\d)[a-zA-Z\d]{8,}$/;
-    if (!obj.value.length) {
-        msg.innerHTML = "Please fill out field";
+// Validation for password
+function passwordValidate(input, text) {
+    var password = input.value;
+    var passwordRegex = /^(?=.*\d)[a-zA-Z\d]{8,}$/;
+    if (!input.value.length) {
+        text.innerHTML = "Please fill out field";
     }
-    else if (!regExpression.test(password)) {
-        msg.innerHTML = "Please input a password that's 8 characters long and must include at least 1 number";
+    else if (!passwordRegex.test(password)) {
+        text.innerHTML = "Please input a password that's 8 characters long and must include at least 1 number";
     }
     else {
-        msg.innerHTML = "";
+        text.innerHTML = "";
     }
     return;
 }
 
-
-function ValidateState(obj, msg) {
-    var state = obj.value;
-    var regExpression = /^[a-zA-Z]{1,3}$/;
-    if (!obj.value.length) {
-        msg.innerHTML = "Please fill out field";
+// Validation for state
+function stateValidate(input, text) {
+    var state = input.value;
+    var stateRegex = /^[a-zA-Z]{1,3}$/;
+    if (!input.value.length) {
+        text.innerHTML = "Please fill out field";
     }
-    else if (!regExpression.test(state)) {
-        msg.innerHTML = "Input must be 3 alphabet characters or less";
+    else if (!stateRegex.test(state)) {
+        text.innerHTML = "Input must be 3 alphabet characters or less";
     }
     else {
-        msg.innerHTML = "";
+        text.innerHTML = "";
     }
     return;
 }
