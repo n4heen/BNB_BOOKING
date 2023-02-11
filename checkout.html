@@ -26,23 +26,23 @@
     <section class="checkout">
         <!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
         <h1 class="orange">Checkout</h1>
-        <form action="#" method="post" onsubmit="return validateForm(this);">
+        <form action="#" method="post" onsubmit="validateForm(this);">
             <div class="checkout__container">
 
-                <div class="input__box--checkout"">
+                <div class="input__box--checkout">
                     <label for=" creditName">Credit Card Name</label>
-                    <input type="text" name="creditName"" id=" creditName" placeholder="Credit Card Name"
-                        onblur="validationRequired(this,document.getElementById('error'));">
-                    <span style="color:red;" id="error"></span>
+                    <input type="text" name="creditName" id=" creditName" placeholder="Credit Card Name"
+                        onblur="validationRequired(this,document.getElementById('creditCardNameError'));">
+                    <span style="color:red;" id="creditCardNameError"></span>
                 </div>
 
 
                 <div class="input__box--checkout">
                     <label for="creditNum">Credit Card Number</label>
                     <input type="text" name="creditNum" maxlength="16" id="creditNum"
-                        onblur="creditCardNumber(this,document.getElementById('numberError'));"
+                        onblur="creditCardNumber(this,document.getElementById('creditCardNumberError'));"
                         placeholder="Credit Card Number">
-                    <span style="color:red;" id="numberError"></span>
+                    <span style="color:red;" id="creditCardNumberError"></span>
                 </div>
 
 

@@ -131,14 +131,14 @@
                 <div class="input__box--register">
                     <label for="user_email">Email</label>
                     <input type="email" name="user_email" id="user_email"
-                        onblur="ValidateEmail(this,document.getElementById('error3'));" placeholder="Email">
-                    <span style="color:red;" id="error3"></span>
+                        onblur="ValidateEmail(this,document.getElementById('emailError'));" placeholder="Email">
+                    <span style="color:red;" id="emailError"></span>
                 </div>
                 <div class="input__box--register">
                     <label for="user_password">Password</label>
                     <input type="password" name="user_password" id="user_password"
-                        onblur="ValidatePassword(this,document.getElementById('pwordError'));" placeholder="Password">
-                    <span style="color:red;" id="pwordError"></span>
+                        onblur="ValidatePassword(this,document.getElementById('registerPwordError'));" placeholder="Password">
+                    <span style="color:red;" id="registerPwordError"></span>
                 </div>
             </div>
 
@@ -174,8 +174,8 @@
                 <div class="input__box--register">
                     <label for="user_postcode">Postcode</label>
                     <input type="text" name="user_postcode" maxlength="4" id="user_postcode"
-                        onblur="postCode(this,document.getElementById('error1'));" placeholder="Postcode">
-                    <span style="color:red;" id="error1"></span>
+                        onblur="postCode(this,document.getElementById('postcodeError'));" placeholder="Postcode">
+                    <span style="color:red;" id="postcodeError"></span>
                 </div>
             </div>
 

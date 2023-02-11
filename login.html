@@ -34,16 +34,16 @@
       <div class="input__box">
         <label for="user_email">Email</label>
         <input type="email" name="user_email" id="user_email"
-          onblur="ValidateEmail(this,document.getElementById('error3'));" placeholder="Email">
-        <span style="color:red;" id="error3"></span>
+          onblur="ValidateEmail(this,document.getElementById('emailError'));" placeholder="Email">
+        <span style="color:red;" id="emailError"></span>
       </div>
 
 
       <div class="input__box">
         <label for="user_password">Password</label>
         <input type="password" name="user_password" id="user_password"
-          onblur="ValidatePassword(this,document.getElementById('error4'));" placeholder="Password">
-        <span style="color:red;" id="error4"></span>
+          onblur="ValidatePassword(this,document.getElementById('loginPwordError'));" placeholder="Password">
+        <span style="color:red;" id="loginPwordError"></span>
       </div>
       <input class="button" type="submit" value="Login" name="submit">
 
