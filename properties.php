@@ -19,8 +19,8 @@ session_start();
 <a href="properties.php">Properties</a>
 <a href="bookings.php">Bookings</a>
 <a href="profile.php">My Profile</a>
-<a href="register.html">Register</a>
-<a href="login.html">Login</a>
+<a href="register.php">Register</a>
+<a href="login.php">Login</a>
 <a href="logoff.php">Logout</a>
 </nav>
     </header>
@@ -47,7 +47,7 @@ if (mysqli_num_rows($result) > 0) {
   echo "</tr>";
  }
 } 
- {
+ else{
 
  echo "<h1>No Properties Available</h1>";
 

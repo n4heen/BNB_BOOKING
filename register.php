@@ -3,53 +3,12 @@
 
 session_start();
 
-// Check if the form has been submitted
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Connect to the database
+    $conn = mysqli_connect("localhost", "twa076", "twa076Wj", "bnb_booking076");
 
-    $connection = new mysqli('localhost', 'twa076', 'twa076Wj', 'bnb_booking076'); ); 
-    // Escape user inputs for security
-    $user_fname= mysqli_real_escape_string($connection, $_POST['user_fname']);
-    $user_lname= mysqli_real_escape_string($connection, $_POST['user_lname']);
-    $user_email= mysqli_real_escape_string($connection, $_POST['user_email']);
-    $username= mysqli_real_escape_string($connection, $_POST['username']);
-    $user_password= hash('sha256', mysqli_real_escape_string($connection, $_POST['user_password']));
-    $user_street= mysqli_real_escape_string($connection, $_POST['user_street']);
-    $user_suburb= mysqli_real_escape_string($connection, $_POST['user_suburb']);
-    $user_state= mysqli_real_escape_string($connection, $_POST['user_state']);
-    $user_postcode= mysqli_real_escape_string($connection, $_POST['user_postcode']);
-
-    $user_type = 'General';
-
-    // Insert the user into the database
-    $sql = "INSERT INTO user (user_fname,user_lname, user_email,username, user_password, user_street, user_suburb, user_state, user_postcode, user_type) VALUES ('$user_fname','$user_lname','$user_email','$username', '$user_password',   '$user_street', '$user_suburb', '$user_state', '$user_postcode', '$user_type')";
-
-    mysqli_query($connection, $sql);
-
-    // Get the user's ID
-    $user_id = mysqli_insert_id($connection);
-
-    // Close the connection
-    mysqli_close($connection);
-
-    // Store the user's ID in a session
-    $_SESSION['user_id'] = $user_id;
-
-    // Redirect the user to the home page
-    header("Location: index.php");
-    exit();
-}
-
-
-
-session_start();
-
-// Check if the form has been submitted
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Connect to the database
-    $conn = mysqli_connect('localhost', 'twa076', 'twa076Wj', 'bnb_booking076'); 
-
-    // Escape user inputs for security
+ 
     $user_email= mysqli_real_escape_string($conn, $_POST['user_email']);
     $user_password= hash('sha256', mysqli_real_escape_string($conn, $_POST['user_password']));
     $user_fname= mysqli_real_escape_string($conn, $_POST['user_fname']);
@@ -60,23 +19,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user_postcode= mysqli_real_escape_string($conn, $_POST['user_postcode']);
     $user_type = 'General';
 
-    // Insert the user into the database
-    $sql = "INSERT INTO user (user_fname,user_lname, user_email, user_password, user_street, user_suburb, user_state, user_postcode, user_type) VALUES ('$user_email', '$user_password', '$user_fname', '$user_lname', '$user_street', '$user_suburb', '$user_state', '$user_postcode', '$user_type')";
+   
+    $sql = "INSERT INTO user (user_email, user_password, user_fname, user_lname, user_street, user_suburb, user_state, user_postcode, user_type) VALUES ('$user_email', '$user_password', '$user_fname', '$user_lname', '$user_street', '$user_suburb', '$user_state', '$user_postcode', '$user_type')";
     mysqli_query($conn, $sql);
 
-    // Get the user's ID
+
     $user_id = mysqli_insert_id($conn);
 
-    // Close the connection
     mysqli_close($conn);
 
-    // Store the user's ID in a session
     $_SESSION['user_id'] = $user_id;
 
-    // Redirect the user to the home page
-    header("Location: index.php");
+   
+    header("Location: index.html");
     exit();
 }
+
+
+
+
 
  ?>
 
@@ -87,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <title>B&B REGISTER</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="/actions.js"></script>
+    <script src="actions.js"></script>
 </head>
 
 <body>
@@ -98,8 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <a href="properties.php">Properties</a>
             <a href="bookings.php">Bookings</a>
             <a href="profile.php">My Profile</a>
-            <a href="register.html">Register</a>
-            <a href="login.html">Login</a>
+            <a href="register.php">Register</a>
+            <a href="login.php">Login</a>
             <a href="logoff.php">Logout</a>
         </nav>
     </header>
@@ -161,12 +122,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
                 <div class="input__box--register">
-                    <label for="state">State</label>
-                    <input type="text" name="state" id="state"
+                    <label for="user_state">State</label>
+                    <input type="text" name="user_state" id="user_state"
                         onblur="stateValidate(this,document.getElementById('stateError'));" placeholder="State">
                     <span style="color:#ff8c00;" id="stateError"></span>
-
-
                 </div>
 
                 <div class="input__box--register">

@@ -1,4 +1,3 @@
-<!-- 20408031 Naheen Habib Tuesday 12pm -->
 <?php
 
 session_start();
@@ -33,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['user_id'] = $user_id;
 
     // Redirect the user to the home page
-    header("Location: index.php");
+    header("Location: index.html");
     exit();
 }
 
@@ -47,9 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  <title>Registration Page</title>
 </head>
 <body>
-
  <h1>Register a New Account</h1>
- <form action="register.php" method="post">
+ <form action="patregister.php" method="post">
  
   <h3>Personal Details</h3>
  
