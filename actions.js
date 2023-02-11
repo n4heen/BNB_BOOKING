@@ -1,66 +1,159 @@
 // 20408031 Naheen Habib Tuesday 12pm
 
-
-//Login Validation
-function nameValidate(element) {
-    if(!element.value.length) {
-        element.labels[0].style.color = "red";
-        element.style.border = "1px red dashed";
+function validationRequired(input, msg) {
+    if (!input.value.length) {
+        msg.innerHTML = "Please fill out field";
     } else {
-        element.labels[0].style.color = "black";
-        element.style.border = "1px #ccc solid";
+        msg.innerHTML = "";
     }
 }
 
-function checkoutValid(form) {
-    var checkout = false;
 
-    //Credit Card Name Validation 
-    if (requiredFieldEmpty(form.creditName)) invalid = true;
 
-    if (form.creditNum.value.length === 0) {
-        valid = true;
-        document.getElementById("creditNumRequired").innerText = ""
-        document.getElementById("creditNumRequired").style.display = "inline-block";
+function ValidateRegistrationName(obj, msg) {
+    var name = obj.value;
+    var regExpression = /^[A-Z][a-z]+$/;
+
+    if (!obj.value.length) {
+        msg.innerHTML = "Please fill out field";
     }
 
-    if (invalid) {
-        document.getElementById('form-error').style.display = "inline-block";    //display the error message
-        return false;       //stop the form submitting
-    }
-    return true;
-
-
-
-}
-
-function showWarning(element, firstID, secondID, regEx) {
-    let formString = element.value;
-
-    if (!element.value.length) {
-        document.getElementById(secondID).style.display = "none";
-        document.getElementById(firstID).style.display = "inline-block";
-    }
-    else if (regEx.test(formString)) {
-        document.getElementById(secondID).style.display = "none";
+    else if (!regExpression.test(name)) {
+        msg.innerHTML = "Name must start with a capital letter";
     }
     else {
-        document.getElementById(firstID).style.display = "none";
-        document.getElementById(secondID).style.display = "inline-block";
+        msg.innerHTML = "";
     }
 
+    return;
+}
+
+
+
+
+function creditCardNumber(obj, msg) {
+    var regex = /^\d{16}$/;
+    var creditCard = obj.value;
+    if (!obj.value.length) {
+        msg.innerHTML = "Please fill out field";
+    }
+    else if (creditCard.length != 0) {
+        if (isNaN(creditCard))
+            msg.innerHTML = "Numbers only please.";
+        else if (!regex.test(creditCard)) {
+            msg.innerHTML = "Please enter value under 16 digits"
+        } else {
+            msg.innerHTML = ""
+        }
+    }
+    return;
 
 }
 
 
-function warningRegex(element, id) {
-    document.getElementById(id).style.display = "none";
+function validateExpiryDate(date, msg) {
+    var today = new Date();
+    var expiry = new Date(date);
 
-    if (id == "clubNumber_required_input") {
 
-        let regEx = /[0-9]{16}/;//0000
-        showWarning(element, "creditNumRequired", "creditNum16", regEx);
-
+    if (validateExpiryDate(today)) {
+        msg.innerHTML = "invalid expiry date";
+    } else {
+        msg.innerHTML = ""
     }
-
+    return expiry > today;
 }
+
+
+function csvNumberRegex(obj, msg) {
+    var regex = /^\d{3}$/;
+    var csvNumber = obj.value;
+    if (!obj.value.length) {
+        msg.innerHTML = "Please fill out field";
+    }
+    else if (csvNumber.length != 0) {
+        if (isNaN(csvNumber))
+            msg.innerHTML = "Numbers only please.";
+        else if (!regex.test(csvNumber)) {
+            msg.innerHTML = "Please enter value under 3 digits"
+        } else {
+            msg.innerHTML = ""
+        }
+    }
+    return;
+}
+
+function postCode(obj, msg) {
+    var postCodeRegex = /^\d{4}$/;
+    var postCode = obj.value;
+    if (!obj.value.length) {
+        msg.innerHTML = "Please fill out field";
+    }
+    else if (postCode.length != 0) {
+        if (isNaN(postCode))
+            msg.innerHTML = "Numbers only please.";
+        else if (!postCodeRegex.test(postCode)) {
+            msg.innerHTML = "Please enter value under 4 digits"
+        } else {
+            msg.innerHTML = ""
+        }
+    }
+    return;
+}
+
+
+function ValidateEmail(obj, msg) {
+    var email = obj.value;
+    var regExpression = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!obj.value.length) {
+        msg.innerHTML = "Please fill out field";
+    }
+    else if (!regExpression.test(email)) {
+        msg.innerHTML = "Invalid email address.";
+    }
+    else {
+        msg.innerHTML = "";
+    }
+    return;
+}
+
+function ValidatePassword(obj, msg) {
+    var password = obj.value;
+    var regExpression = /^(?=.*\d)[a-zA-Z\d]{8,}$/;
+    if (!obj.value.length) {
+        msg.innerHTML = "Please fill out field";
+    }
+    else if (!regExpression.test(password)) {
+        msg.innerHTML = "Please input a password that's 8 characters long and must include at least 1 number";
+    }
+    else {
+        msg.innerHTML = "";
+    }
+    return;
+}
+
+
+function ValidateState(obj, msg) {
+    var state = obj.value;
+    var regExpression = /^[a-zA-Z]{1,3}$/;
+    if (!obj.value.length) {
+        msg.innerHTML = "Please fill out field";
+    }
+    else if (!regExpression.test(state)) {
+        msg.innerHTML = "Input must be 3 alphabet characters or less";
+    }
+    else {
+        msg.innerHTML = "";
+    }
+    return;
+}
+
+
+
+
+
+
+
+
+
+

@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <title>B&B login</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="/actions.js"></script>
 </head>
 
 <body>
@@ -19,21 +20,32 @@
       <a href="register.html">Register</a>
       <a href="login.html">Login</a>
       <a href="logoff.php">Logout</a>
-  </nav>
+    </nav>
   </header>
   <section id="login">
     <!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
     <h1 class="orange">Login To Your Account</h1>
     <form action="">
+      <!-- <div class="input__box">
+        <label for="user_email">Email</label>
+        <input type="email" name="user_email" id="user_email" placeholder="Email" onblur="nameValidate(this)">
+      </div> -->
+
       <div class="input__box">
-        <label for="username">Username</label>
-        <input   onblur="nameValidate(this)"   type="text" name="username" maxlength="50" id="username" placeholder="Username">
+        <label for="user_email">Email</label>
+        <input type="email" name="user_email" id="user_email"
+          onblur="ValidateEmail(this,document.getElementById('error3'));" placeholder="Email">
+        <span style="color:red;" id="error3"></span>
       </div>
+
+
       <div class="input__box">
-        <label for="pword">Password</label>
-        <input type="password" name="pword" maxlength="20" id="pword" placeholder="Password">
+        <label for="user_password">Password</label>
+        <input type="password" name="user_password" id="user_password"
+          onblur="ValidatePassword(this,document.getElementById('error4'));" placeholder="Password">
+        <span style="color:red;" id="error4"></span>
       </div>
-      <input onblur="nameValidate(this)"  class="button" type="submit" value="Login" name="submit">
+      <input class="button" type="submit" value="Login" name="submit">
 
     </form>
   </section>

@@ -9,6 +9,19 @@
     background-color: #ffff;
 }
 
+
+.error-messages {
+    display: none;
+    color: #7f0303;
+    border: 1px solid #7f0303;
+    background-color: #f4dcdc;
+    padding: 1px;
+    border-radius: 3px;
+    width: 200px;
+    margin-left: 10px;
+}
+
+
 /*  HOME PAGE*/
 nav {
     margin-top: 16px;
@@ -82,11 +95,11 @@ tr {
 
 /*LOGIN PAGE*/
 
-form {
+.input__box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-bottom: 16px;
 }
 
 label {
@@ -97,7 +110,8 @@ label {
 }
 
 
-input,select {
+input,
+select {
     margin-bottom: 16px;
     text-align: center;
     border: 1px #5f6368 solid;
@@ -115,6 +129,13 @@ input,select {
     margin-top: 5%;
 }
 
+.registration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
 .registration__container {
     display: flex;
     margin-bottom: 16px;
@@ -123,6 +144,8 @@ input,select {
 .input__box--register {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 0 32px 0 32px;
 }
 
@@ -130,11 +153,15 @@ input,select {
 
 .checkout__container {
     display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 16px;
 }
 
 .input__box--checkout {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     margin: 0 32px 0 32px;
 }

@@ -26,32 +26,42 @@
     <section class="checkout">
         <!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>"> -->
         <h1 class="orange">Checkout</h1>
-        <form action="#" method="get" onsubmit=" checkoutValid(this)">
+        <form action="#" method="post" onsubmit="return validateForm(this);">
             <div class="checkout__container">
-                <div class="input__box--checkout">
-                    <label for="creditName">Credit Card Name</label>
-                    <input type="text" name="creditName" maxlength="50" id="creditName" onblur="nameValidate(this);" placeholder="Credit Card Name">
-                    <span id="creditNameRequire"> Please fill this field </span>
+
+                <div class="input__box--checkout"">
+                    <label for=" creditName">Credit Card Name</label>
+                    <input type="text" name="creditName"" id=" creditName" placeholder="Credit Card Name"
+                        onblur="validationRequired(this,document.getElementById('error'));">
+                    <span style="color:red;" id="error"></span>
                 </div>
+
 
                 <div class="input__box--checkout">
                     <label for="creditNum">Credit Card Number</label>
-                    <input type="text" name="creditNum" maxlength="50" id="creditNum"
-                        onblur="warningRegex(this, 'creditNumRequired')" placeholder="Credit Card Number">
-                    <span id="creditNumRequired"> Please fill this field </span>
-                    <span id="creditNum16"> Please enter 16 digits only </span>
+                    <input type="text" name="creditNum" maxlength="16" id="creditNum"
+                        onblur="creditCardNumber(this,document.getElementById('numberError'));"
+                        placeholder="Credit Card Number">
+                    <span style="color:red;" id="numberError"></span>
                 </div>
+
+
             </div>
             <div class="checkout__container">
                 <div class="input__box--checkout">
                     <label for="creditExpire">Expiry Date</label>
-                    <input type="text" name="creditExpire" maxlength="50" id="creditExpire" placeholder="Expiry Date">
+                    <input type="date" name="creditExpire" maxlength="50" id="creditExpire"
+                        onblur="validateExpiryDate(this,document.getElementById('expiryDateError'));"
+                        placeholder="Expiry Date">
+                    <span style="color:red;" id="expiryDateError"></span>
                 </div>
 
 
                 <div class="input__box--checkout">
                     <label for="creditCsv">CSV Number</label>
-                    <input type="text" name="creditCsv" maxlength="50" id="creditCsv" placeholder="CSV Number">
+                    <input type="text" name="creditCsv" maxlength="3" id="creditCsv"
+                        onblur="csvNumberRegex(this,document.getElementById('CsvError'));" placeholder="CSV Number">
+                    <span style="color:red;" id="CsvError"></span>
                 </div>
             </div>
             <input class="button" type="submit" value="Login" name="submit">

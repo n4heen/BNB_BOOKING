@@ -52,6 +52,13 @@ if (mysqli_num_rows($result) > 0) {
  echo "<h1>No Properties Available</h1>";
 
 }
+
+
+//how do i connect to a php database?
+
+
+
+
 // Close the database connection
 mysqli_close($connection);
 ?> 
