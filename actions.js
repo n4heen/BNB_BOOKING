@@ -51,18 +51,18 @@ function creditCardNumber(obj, msg) {
 }
 
 
-function validateExpiryDate(date, msg) {
-    var today = new Date();
-    var expiry = new Date(date);
+// function validateExpiryDate(date, msg) {
+//     var today = new Date();
+//     var expiry = new Date(date);
 
 
-    if (validateExpiryDate(today)) {
-        msg.innerHTML = "invalid expiry date";
-    } else {
-        msg.innerHTML = ""
-    }
-    return expiry > today;
-}
+//     if (validateExpiryDate(today)) {
+//         msg.innerHTML = "invalid expiry date";
+//     } else {
+//         msg.innerHTML = ""
+//     }
+//     return expiry > today;
+// }
 
 
 function csvNumberRegex(obj, msg) {
