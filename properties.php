@@ -53,12 +53,6 @@ if (mysqli_num_rows($result) > 0) {
 
 }
 
-
-//how do i connect to a php database?
-
-
-
-
 // Close the database connection
 mysqli_close($connection);
 ?> 

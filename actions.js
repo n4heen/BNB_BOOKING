@@ -29,7 +29,24 @@ function registrationNameValidate(input, text) {
     return;
 }
 
+//Validation for credit card name
+function creditCardNameValidate(input, text) {
+    var creditCardName = input.value
+    var creditCardNameRegex = /^[a-zA-Z\']+$/;
 
+    if (!input.value.length) {
+        text.textContent = "Please fill out field";
+    }
+    else if (!creditCardNameRegex.test(creditCardName)) {
+        text.textContent = "Name must be alphabetical characters and single inverted commas only";
+    }
+    else {
+        text.textContent = "";
+    }
+
+    return;
+
+}
 
 // Validation for credit card number
 function creditCardNumValidate(input, text) {
