@@ -1,4 +1,8 @@
-# BNB_BOOKING
+There are a total over 6 users registered into the database.
+4 users being already in the data as stated in th major assignment handout.
+2 users are registered through the registeration page.
+More users can be registered by filling out the form in the registration page.
+
 User 1:
 Username: john.smith@example.com
 Password: password1
