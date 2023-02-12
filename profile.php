@@ -14,16 +14,16 @@
 
 <body>
     <header>
-        <nav>
+    <nav>
 
-            <a href="index.html">Home</a>
-            <a href="properties.php">Properties</a>
-            <a href="bookings.php">Bookings</a>
-            <a href="profile.php">My Profile</a>
-            <a href="register.php">Register</a>
-            <a href="login.php">Login</a>
-            <a href="logoff.php">Logout</a>
-        </nav>
+<a href="index.html">Home</a>
+<a href="properties.php">Properties</a>
+<a href="checkout.html">Checkout</a>
+<a href="profile.php">My Profile</a>
+<a href="register.php">Register</a>
+<a href="login.php">Login</a>
+<a href="logoff.php">Logout</a>
+</nav>
     </header>
     <section>
     <?php
@@ -31,6 +31,7 @@
   $connection = mysqli_connect("localhost", "twa076", "twa076Wj", "bnb_booking076");
 
   $user_email = $_SESSION['user_email'];
+  
 
 $result = mysqli_query($connection, "SELECT * FROM user WHERE user_email = '$user_email'");
 
@@ -45,7 +46,7 @@ if(mysqli_num_rows($result)==1) {
 
  else{
 
-    echo "<h1>". "Welcome to". "<span class='orange'>". "B&B Booking". "</span>"."</h1>";
+    echo "<h1>". "Please Register to ". "<span class='orange'>". "B&B Booking". "</span>"."</h1>";
 
 }
 

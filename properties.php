@@ -17,7 +17,7 @@ session_start();
 
 <a href="index.html">Home</a>
 <a href="properties.php">Properties</a>
-<a href="bookings.php">Bookings</a>
+<a href="checkout.html">Checkout</a>
 <a href="profile.php">My Profile</a>
 <a href="register.php">Register</a>
 <a href="login.php">Login</a>
