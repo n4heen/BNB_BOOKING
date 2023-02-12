@@ -51,8 +51,8 @@ function creditCardNumValidate(input, text) {
 
 }
 
-
-// function validateExpiryDate(date, text) {
+//Validation for Expiry Date
+// function ExpiryDateValidate(date, text) {
 //     var today = new Date();
 //     var expiry = new Date(date);
 
