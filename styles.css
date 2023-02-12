@@ -47,6 +47,7 @@ p {
 .button {
     border: none;
     margin-top: 8px;
+    margin-bottom: 8px;
     padding: 8px 24px 8px 24px;
     background-color: #ff8c00;
     border-radius: 4px;
@@ -65,15 +66,12 @@ p {
 #properties {
     margin-top: 5%;
     margin-bottom: 16px;
-}
-
-table {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-tr {
+.propertiesAvailable {
     display: flex;
     flex-direction: column;
     align-items: center;

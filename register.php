@@ -19,9 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $postcode= mysqli_real_escape_string($connection, $_POST['user_postcode']);
     $type = 'General';
    
-    $sql = "INSERT INTO user (user_email, user_password, user_fname, user_lname, user_street, user_suburb, user_state, user_postcode, user_type) VALUES ('$email',
-     '$password', '$fname', '$lname', '$street', '$suburb', '$state', '$postcode','$type')";
-    mysqli_query($connection, $sql);
+    
+    mysqli_query($connection, "INSERT INTO user (user_email, user_password, user_fname, user_lname, user_street, user_suburb, user_state, user_postcode, user_type) VALUES ('$email',
+    '$password', '$fname', '$lname', '$street', '$suburb', '$state', '$postcode','$type')");
 
 
     $id = mysqli_insert_id($connection);

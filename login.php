@@ -15,16 +15,12 @@
 
   
     $result = mysqli_query($connect, "SELECT * FROM user WHERE user_email = '$user_email' AND user_password = '$user_password'");
-   
-    if (mysqli_num_rows($result) == 1) {
-   
-      $_SESSION['logged_in'] = true;
-      $_SESSION['user_email'] = $user_email;
+
+     $_SESSION['user_email'] = $user_email;
       header('Location: index.html');
-    } else {
-      echo 'Incorrect Login';
-    }
+  
   }
+
 ?>
 
 <!DOCTYPE html>

@@ -167,13 +167,3 @@ function stateValidate(input, text) {
     }
     return;
 }
-
-
-
-
-
-
-
-
-
-

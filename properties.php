@@ -31,20 +31,22 @@ session_start();
   // Connect to the database
   require_once'dbconn.php';
   
-$sql = "SELECT property_name, property_beds, property_street, property_suburb, property_state, property_postcode, property_pernight, property_image FROM property";
-$result = mysqli_query($connection, $sql);
-// If there are any properties in the table
-if (mysqli_num_rows($result) > 0) {
- // Loop through the result and display the properties
- while($row = mysqli_fetch_assoc($result)) {
-  echo "<tr>";
-  echo "<td><img src='" . $row["property_image"] . "'></td>";
-  echo "<td>" . $row["property_name"] . "</td>";
-  echo "<td>" . $row["property_beds"] ." "."bedrooms". "</td>";
-  echo "<td>" . $row["property_street"] . " " . $row["property_suburb"] . " " . $row["property_state"] . " " . $row["property_postcode"] . "</td>";
-  echo "<td>" . "$" . $row["property_pernight"] . "</td>";
+$result = mysqli_query($connection, "SELECT property_name, property_beds, property_street, property_suburb, property_state, property_postcode, property_pernight, property_image FROM property");
 
-  echo "</tr>";
+
+
+if (mysqli_num_rows($result) > 0) {
+ 
+ while($row = mysqli_fetch_assoc($result)) {
+  echo "<div class='propertiesAvailable'>";
+  echo "<img src='" . $row["property_image"] . "'>";
+  echo "<h4>" . $row["property_name"] . "</h4>";
+  echo "<h4>" . $row["property_beds"] ." "."bedrooms". "</h4>";
+  echo "<h4>" . $row["property_street"] . " " . $row["property_suburb"] . " " . $row["property_state"] . " " . $row["property_postcode"] . "</h4>";
+  echo "<h4>" . "$" . $row["property_pernight"] . "</h4>";
+
+  echo "</div>";
+  echo " <button class='button'>". "<a class='orange__link' href='checkout.html'>". "Checkout"."</a>"."</button>";
  }
 } 
  else{
@@ -57,7 +59,7 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_close($connection);
 ?> 
 
-       </table>
+      
     </section>
 </body>
 
